@@ -1,0 +1,131 @@
+.header1{
+    display:inline-block;
+ background-color:#3399cc;
+  font-size: 60px;
+  width: 100%;
+ color:white;
+ padding:30px 0px 30px 20px;
+}
+body{
+    margin:0;
+    overflow-x:hidden;
+}
+.nav1{
+    
+    background-color:black;
+     font-size: 20px;
+     padding:10px 10px 10px 20px;
+     width: 100%;
+    color:white;
+}
+.nav-home{
+    display:inline-block;
+    font-size: 20px;
+     
+    color:white;
+    
+
+}
+.nav-add{
+    display:inline-block;
+    font-size: 20px;
+  
+    color:white;
+    padding-left:20px;
+}
+.nav-img{
+    
+ 
+    
+    color:white;
+    float: right;
+    padding-right: 30px;
+}
+
+.contact{
+    display:inline-block;
+    font-size: 20px;
+    width:40%;
+   padding:30px 0px 0px 15px;
+  
+
+}
+.contact-card{
+    border:1px solid #d9d7d8;
+
+}
+.contact-display{
+    margin-top: 20px;
+    
+}
+
+
+
+.add-contact{
+    width:45%;
+    display: inline-block;
+    margin:30px 100px 0px 0px;
+    
+    z-index:2;
+    border: 1px solid;
+  padding: 30px;
+  box-shadow: 5px 10px 8px #888888;
+  float:right;
+  
+}
+.name > input{
+    width: 80%;;
+    height: 30px;
+    margin:6px 0px 10px 0px;
+}
+.email > input{
+    width: 80%;;
+    height: 30px;
+    margin:6px 0px 10px 0px;
+}
+
+.mobile{
+    
+    float: left;
+  
+    
+}
+
+.mobile > input{
+    width: 60%;
+    height: 30px;
+    margin:6px 110px 10px 0px;
+
+}
+.landline > input{
+    
+    width: 40%;
+    height: 30px;
+    margin:6px 0px 10px 0px;
+    
+ 
+    
+}
+.website > input{
+    width: 80%;;
+    height: 30px;
+    margin:6px 0px 10px 0px;
+
+}
+
+.address > textarea{
+    width: 80%;;
+    height: 100px;
+    margin:6px 0px 10px 0px;
+
+}
+
+.submit{
+    font-size:17px;
+    color: white;
+    background-color:#468c00;
+    padding:5px 40px 5px 40px;
+    margin:10px 0px 0px  81%;
+    border: none;
+    
+}
