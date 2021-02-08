@@ -11,7 +11,7 @@ class Contact {
         this.address = address;
     }
 }
-var id=4;
+
 
 var Contacts = new Array(
     new Contact('Chandermani Arora', 'chandermani@technovert.com', '+91 7845120215', '01234058490', 'https://www.technovert.com', "Jubilee Hills"),
@@ -31,7 +31,7 @@ window.onload = function(){
     var addbtn2 = document.getElementById('add');
     addbtn.addEventListener('click', addItem);
     addbtn2.addEventListener('click', displayform);
-    let contact = new Contact(name,email,mobile,landline,website,address);
+    let contact = new Contact(namee,email,mobile,landline,website,address);
     var deletebtn = document.getElementById('sel-delete');
 if(deletebtn!=null){
 deletebtn.addEventListener('click',(e) => {  
@@ -48,6 +48,7 @@ document.getElementById('sel-contact').style.display='none';
     function displayform(){
         document.getElementById('sel-contact').style.display = 'none';
         var form = document.getElementById('addContact');
+        document.getElementById('addContact2').style.display='none'
 
         form.style.display="block";
         
@@ -67,16 +68,11 @@ function addItem(e)
     var address = document.getElementById('address').value;
 
     Contacts.push(contact);
-    id++;
+    
     displayincontact2(contact);
 
 }
 }
-
-function deletefromlist(params){
-
-}
-
 
 
 
@@ -88,6 +84,8 @@ function displayincontact1(params)
     var div = document.createElement('div');
     var contactlist = document.getElementById('cdisplay');
     div.className='contact-card';
+    div.id = contact.id;
+    // console.log(div.id);
     var div2 = document.createElement('div');
     var div3 = document.createElement('div');
     var div4 = document.createElement('div');
@@ -118,6 +116,9 @@ function displayincontact2(params)
     var div = document.createElement('div');
     var contactlist = document.getElementById('cdisplay');
     div.className='contact-card';
+    div.id = params.id;
+
+    // console.log(div.id);
     var div2 = document.createElement('div');
     var div3 = document.createElement('div');
     var div4 = document.createElement('div');
@@ -141,6 +142,24 @@ function displayincontact2(params)
 
 }
 
+function deleteContact(id){
+
+
+        document.getElementById('sel-contact').style.display='none';
+    
+        Contacts = Contacts.filter((contact) => {
+            return contact.id != id;
+        });
+        
+        let contact = document.getElementById(id);
+        // console.log(contact);
+        if(contact!=null){        let parent = contact.parentElement;
+            // console.log(parent);
+        parent.removeChild(contact);
+        }
+    
+
+}
 function displayselContact(params)
 {
     var form = document.getElementById('addContact');
@@ -153,7 +172,26 @@ function displayselContact(params)
    document.getElementById('sel-landline1').innerHTML= params.landline;
    document.getElementById('sel-website1').innerHTML= params.website;
    document.getElementById('sel-address1').innerHTML= params.address;
+   const id = document.getElementById('sel-id');
+   id.value = params.id;
+//    console.log(id);
+    document.getElementById('sel-delete').addEventListener('click', (e) => {
+    let id1 = document.getElementById('sel-id').value;
+    // console.log(id1);
 
+    deleteContact(id1);
+    
+    
+    
+});
+    document.getElementById('sel-edit').addEventListener('click', (e) => {
+    let id1 = document.getElementById('sel-id').value;
+    document.getElementById('sel-contact').style.display = "none";
+    document.getElementById('addContact2').style.display = "block";
+    // console.log(id1);
+    editcontact(id1);
+});
+   
 
 }
 function displayselContact1(params)
@@ -170,8 +208,134 @@ function displayselContact1(params)
    document.getElementById('sel-landline1').innerHTML= params.landline.value;
    document.getElementById('sel-website1').innerHTML= params.website.value;
    document.getElementById('sel-address1').innerHTML= params.address.value;
+   let id = document.getElementById('sel-id');
+   id.value = params.id;
+//    console.log(id)
+   document.getElementById('sel-delete').addEventListener('click', (e) => {
+    let id1 = document.getElementById('sel-id').value;
+    // console.log(id1);
+    deleteContact(id1);
+    
+});
+// document.getElementById('sel-edit').addEventListener('click', (e) => {
+//     let id1 = document.getElementById('sel-id').value;
+//     // console.log(id1);
+//     document.getElementById('sel-contact').style.display = "none";
+//     document.getElementById('addContact2').style.display = "block";
+//     editcontact(id1);
+    
+    
+// });
+
+}
 
 
+function editcontact(id) {
+
+
+
+    
+    console.log('a');
+    document.getElementById('update2').style.display='block';
+    const  Name = document.getElementById('namee2');
+    const Email = document.getElementById('email2');
+    const Mobile = document.getElementById('mobile2');
+    const Landline = document.getElementById('landline2');
+    const Website = document.getElementById('website2');
+    const Address = document.getElementById('address2');
+    const Id = document.getElementById('addContact2');
+    const SubmitBtn = document.getElementById('update2');
+
+//  Name.onkeypress = (e) => e.key != "Enter";
+//  Email.onkeypress = (e) => e.key != "Enter";
+//  Mobile.onkeypress = (e) => e.key != "Enter";
+//  Landline.onkeypress = (e) => e.key != "Enter";
+//  Website.onkeypress = (e) => e.key != "Enter";
+
+
+    let nameVal = '';
+    let emailVal = '';
+    let websiteVal = '';
+    let mobileVal = '';
+    let landlineVal = '';
+    let addressVal = '';
+    let idVal = '';
+    let subButtonVal = 'Add';
+    var i;
+    if (id != undefined) {
+        for ( i = 0; i < Contacts.length; i++) {
+            if (Contacts[i].id == id) {
+                nameVal = Contacts[i].namee;
+                emailVal = Contacts[i].email;
+                websiteVal = Contacts[i].website;
+                mobileVal = Contacts[i].mobile;
+                landlineVal = Contacts[i].landline;
+                addressVal = Contacts[i].address;
+                idVal = Contacts[i].id;
+                subButtonVal = 'Update';
+                break;
+            }
+        }
+     
+        // console.log(nameVal);
+    Name.value = nameVal;
+    Email.value = emailVal;
+    Mobile.value = mobileVal;
+    Landline.value = landlineVal;
+    Website.value = websiteVal;
+    Address.value = addressVal;
+    Id.value = idVal;
+    SubmitBtn.value = subButtonVal;
+
+    
+
+    SubmitBtn.addEventListener('click', e=> {
+        
+        var name = document.getElementById('namee2').value;
+        var email = document.getElementById('email2').value;
+        var mobile = document.getElementById('mobile2').value;
+        var landline = document.getElementById('landline2').value;
+        var website = document.getElementById('website2').value;
+        var address = document.getElementById('address2').value;
+
+        // console.log('a')
+        for(var j=0;j<Contacts.length;j++)
+        {
+            if(Contacts[j].id==id)
+            {
+
+                console.log(id);
+                Contacts[j].namee = name;
+                Contacts[j].email = email;
+                Contacts[j].mobile = mobile;
+                Contacts[j].landline = landline;
+                Contacts[j].website = website;
+                Contacts[j].address = address;
+                break;
+                
+            }
+        }
+    //  console.log(Contacts);
+    var el = document.getElementById('cdisplay').children;
+    var name1 = document.getElementsByClassName('contact-list-name');
+    // el[id].classList;
+
+    // console.log(id);
+    var child = el[id].children;
+   child[0].innerHTML = name;
+   child[1].innerHTML = email;
+   child[2].innerHTML = mobile;
+   document.getElementById('addContact2').style.display = "none";
+
+
+    });
+
+    Contact.id--;
+
+    // document.getElementById('add').addEventListener('click', addItem);
+
+   
+}
 }
 
 

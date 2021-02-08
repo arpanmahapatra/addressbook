@@ -107,6 +107,18 @@ body{
   float:right;
   
 }
+.add-contact2{
+    width:45%;
+    display: none;
+    margin:30px 100px 0px 0px;
+    
+    z-index:2;
+    border: 1px solid;
+  padding: 30px;
+  box-shadow: 5px 10px 8px #888888;
+  float:right;
+  
+}
 .namee > input{
     width: 80%;;
     height: 30px;
@@ -157,6 +169,16 @@ body{
 .submit{
     font-size:17px;
     color: white;
+    background-color:#468c00;
+    padding:5px 40px 5px 40px;
+    margin:10px 0px 0px  81%;
+    border: none;
+    
+}
+.edit{
+    font-size:17px;
+    color: white;
+    display:none;
     background-color:#468c00;
     padding:5px 40px 5px 40px;
     margin:10px 0px 0px  81%;
