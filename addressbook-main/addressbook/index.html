@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address Book</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="address.js"></script>
+
+</head>
+<body>
+<header>
+    <div class="header1">Address Book
+
+    </div>
+</header>
+
+<div class="nav-bar">
+    <button id="home">HOME</button>
+    <button id="add">+ADD</button><img src="blog-icon.png">
+</div>
+
+<div class="contact" id="display">
+    <b>CONTACT</b>
+    <div class="contact-display" id="cdisplay">
+        
+       
+    </div>
+
+</div>
+<div id="sel-contact">
+
+    <h1 id="sel-name">Praveen Battula</h1>
+    <input id="sel-id" type="hidden" value="NaN">
+    <div id="sel-buttons">
+        <button id="sel-edit">
+            <img src="Edit-icon.png" alt="Edit">
+            EDIT
+        </button>
+        <button id="sel-delete" class='delete'>
+            <img src="delete1.png" alt="Delete">
+            DELETE
+        </button>
+    </div>
+
+    <p id="sel-email"><b>Email:</b> <span id="sel-email1" >praveen@technovert.com</span></p>
+
+    <p id="sel-mobile"><b>Mobile:</b> <span id="sel-mobile1">+91 923 345 2342</span></p>
+
+    <p id="sel-landline"><b>Landline: </b><span id="sel-landline1">040 30 1231211</span></p>
+
+    <p id="sel-website"><b>Website:</b> <span id="sel-website1">http://www.technovert.com</span></p>
+
+    <p id="sel-address"><b>Address:</b> <span id="sel-address1">123 now here some street Madhapur, Hyderabad 500000</span></p>
+    </div>
+
+
+
+    <div class="add-contact" id="addContact">
+        <div class="namee"><label for="fullname"  ><b>Name</b></label><br><input type="text" id="namee"></div>
+        <div class="email"><label for="email"><b>E-Mail</b></label><br><input type="text" id="email" class="formFields"></div>
+        <div class="mobile"><label for="mobile"><b>Mobile</b></label><br><input type="text" id="mobile" class="formFields"></div>
+            <div class="landline"><label for="landline"><b>Landline</b></label><br><input type="text" id="landline" class="formFields"></div>
+            <div class="website"><label for="website"  ><b>website</b></label><br><input type="text" id="website"></div>
+        <div class="address"><label for="address"><b>Address</b></label><br><textarea name="address" id="address" cols="30" rows="10" class="formFields"></textarea></div>
+        
+        
+        <br><br>
+        <div class="name"><button class="submit" id="Add">Add</button>
+    </div>
+    
+</div>
+<div class="add-contact2" id="addContact2">
+    <div class="namee"><label for="fullname"  ><b>Name</b></label><br><input type="text" id="namee2"></div>
+    <div class="email"><label for="email"><b>E-Mail</b></label><br><input type="text" id="email2" class="formFields"></div>
+    <div class="mobile"><label for="mobile"><b>Mobile</b></label><br><input type="text" id="mobile2" class="formFields"></div>
+        <div class="landline"><label for="landline"><b>Landline</b></label><br><input type="text" id="landline2" class="formFields"></div>
+        <div class="website"><label for="website"  ><b>website</b></label><br><input type="text" id="website2"></div>
+    <div class="address"><label for="address"><b>Address</b></label><br><textarea name="address" id="address2" cols="30" rows="10" class="formFields"></textarea></div>
+    
+    
+    <br><br>
+    
+<div class="name"><button class="edit" id="update2">Update<button>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,253 @@
+.header1{
+    display:inline-block;
+ background-color:#3399cc;
+  font-size: 60px;
+  width: 100%;
+ color:white;
+ padding:30px 0px 30px 20px;
+}
+body{
+    margin:0;
+    overflow-x:hidden;
+}
+.nav1{
+    
+    background-color:black;
+     font-size: 20px;
+     padding:10px 10px 10px 20px;
+     width: 100%;
+    color:white;
+}
+.nav-home{
+    display:inline-block;
+    font-size: 20px;
+     
+    color:white;
+    
+
+}
+.nav-add{
+    display:inline-block;
+    font-size: 20px;
+  
+    color:white;
+    padding-left:20px;
+}
+.nav-img{
+    
+ 
+    
+    color:white;
+    float: right;
+    padding-right: 30px;
+}
+
+.contact{
+    display:inline-block;
+    font-size: 20px;
+    width:40%;
+   padding:30px 0px 0px 15px;
+   margin-bottom: 20px;
+  
+
+}
+.nav-bar {
+    background-color: black;
+    min-height: 35px;
+}
+
+.nav-bar > button {
+    color: white;
+    background-color: black;
+    border: 0px;
+    font-size: 20px;
+    padding: 5px 20px;
+    font-weight: bold;
+}
+
+.nav-bar > img {
+    float: right;
+    padding: 5px 20px
+}
+.contact-card{
+    border:1px solid #d9d7d8;
+
+}
+.contact-card:hover{
+    background-color:#cee7f2
+
+}
+.contact-display{
+    margin-top: 20px;
+    
+}
+
+.contact-list-name{
+    font-size:30px;
+    padding:5px 0px 2px 10px
+}
+.contact-list-email{
+    font-size:15px;
+    padding:5px 0px 0px 10px
+}
+.contact-list-mobile{
+    font-size:15px;
+    padding:5px 0px 8px 10px
+}
+
+.add-contact{
+    width:45%;
+    display: none;
+    margin:30px 100px 0px 0px;
+    
+    z-index:2;
+    border: 1px solid;
+  padding: 30px;
+  box-shadow: 5px 10px 8px #888888;
+  float:right;
+  
+}
+.add-contact2{
+    width:45%;
+    display: none;
+    margin:30px 100px 0px 0px;
+    
+    z-index:2;
+    border: 1px solid;
+  padding: 30px;
+  box-shadow: 5px 10px 8px #888888;
+  float:right;
+  
+}
+.namee > input{
+    width: 80%;;
+    height: 30px;
+    margin:6px 0px 10px 0px;
+}
+.email > input{
+    width: 80%;;
+    height: 30px;
+    margin:6px 0px 10px 0px;
+}
+
+.mobile{
+    
+    float: left;
+  
+    
+}
+
+.mobile > input{
+    width: 60%;
+    height: 30px;
+    margin:6px 110px 10px 0px;
+
+}
+.landline > input{
+    
+    width: 40%;
+    height: 30px;
+    margin:6px 0px 10px 0px;
+    
+ 
+    
+}
+.website > input{
+    width: 80%;;
+    height: 30px;
+    margin:6px 0px 10px 0px;
+
+}
+
+.address > textarea{
+    width: 80%;;
+    height: 100px;
+    margin:6px 0px 10px 0px;
+
+}
+
+.submit{
+    font-size:17px;
+    color: white;
+    background-color:#468c00;
+    padding:5px 40px 5px 40px;
+    margin:10px 0px 0px  81%;
+    border: none;
+    
+}
+.edit{
+    font-size:17px;
+    color: white;
+    display:none;
+    background-color:#468c00;
+    padding:5px 40px 5px 40px;
+    margin:10px 0px 0px  81%;
+    border: none;
+    
+}
+
+
+
+
+#sel-contact{
+    display: none;
+    float: right;
+
+    margin:20px 100px 0px 0px;
+}
+
+#sel-buttons{
+    float: right;
+    padding-left: 500px;
+    position: relative;
+    bottom: 55px;
+}
+
+#sel-mobile{
+    margin-bottom: 0px;
+}
+
+#sel-landline{
+    margin-top: 0px;
+}
+#sel-edit {
+background-color: white;
+border: 0px;
+font-size: 15px;
+padding: 0px 30px 0px 5px;
+}
+
+#sel-edit > img {
+    height: 18px;
+    width: 15px;
+    position: relative;
+    top: 3px;
+}
+
+#sel-delete{
+background-color: white;
+border: 0px;
+font-size: 15px;
+padding: 0px 30px 0px 5px;
+}
+
+#sel-delete > img {
+    height: 25px;
+    width: 15px;
+    position: relative;
+    top: 3px;
+    right: 5px;
+    
+}
+
+#sel-email{
+padding: 10px 0px 20px 0px;
+}
+
+#sel-website {
+    padding: 25px 0px;
+}
+
+#sel-address{
+    width:30%;
+}
