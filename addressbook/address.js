@@ -49,7 +49,7 @@ document.getElementById('sel-contact').style.display='none';
     function displayform(){
         document.getElementById('sel-contact').style.display = 'none';
         var form = document.getElementById('addContact');
-        document.getElementById('addContact2').style.display='none'
+       
 
         form.style.display="block";
         
@@ -115,11 +115,11 @@ function displayincontact1(params)
 
 function displayincontact2(params)
 {   
-  
+   
     var div = document.createElement('div');
     var contactlist = document.getElementById('cdisplay');
     div.className='contact-card';
-    div.id = params.id;
+    div.id = params.id--;
 
     // console.log(div.id);
     var div2 = document.createElement('div');
@@ -322,7 +322,8 @@ function x(id){
             }
         }
     //  console.log(Contacts);
-     id--;
+     
+    
     if(document.getElementById('cdisplay').children!=null)
     {
         
@@ -340,6 +341,14 @@ function x(id){
    child[2].innerHTML = mobile;
     }
 }
+
+
+document.getElementById('namee').value='';
+document.getElementById('mobile').value='';
+document.getElementById('landline').value='';
+document.getElementById('website').value='';
+document.getElementById('address').value='';
+document.getElementById('email').value='';
 //   
 //    
    return;
