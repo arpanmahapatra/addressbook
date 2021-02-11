@@ -14,10 +14,10 @@ class Contact {
 
 
 var Contacts = new Array(
-    new Contact('Chandermani Arora', 'chandermani@technovert.com', '+91 7845120215', '01234058490', 'https://www.technovert.com', "Jubilee Hills"),
-    new Contact('Sashi Pagadala', 'sashi@technovert.com', '+91 9875841236', '01234058490', 'https://www.technovert.com', "NilgiriHills"),
-    new Contact('Praveen Battula', 'praveen@technovert.com', '+91 5268497502', '01234058490', 'https://www.technovert.com', " Mumbai"),
-    new Contact('Vijay Yalamanchali', 'vijay@technovert.com', '+91 9292929292', '01234058490', 'https://www.technovert.com', "Thane")
+    new Contact('Chandermani Arora', 'chandermani@technovert.com', '7845120215', '01234058490', 'https://www.technovert.com', "Jubilee Hills"),
+    new Contact('Sashi Pagadala', 'sashi@technovert.com', '9875841236', '01234058490', 'https://www.technovert.com', "NilgiriHills"),
+    new Contact('Praveen Battula', 'praveen@technovert.com', '5268497502', '01234058490', 'https://www.technovert.com', " Mumbai"),
+    new Contact('Vijay Yalamanchali', 'vijay@technovert.com', '9292929292', '01234058490', 'https://www.technovert.com', "Thane")
     
 );
 
@@ -36,11 +36,20 @@ window.onload = function(){
     var deletebtn = document.getElementById('sel-delete');
 if(deletebtn!=null){
 deletebtn.addEventListener('click',(e) => {  
-    deletefromlist(e.target.parentElement.parentElement);
+  
 document.getElementById('sel-contact').style.display='none';
 
 
 
+});
+document.getElementById('sel-delete').addEventListener('click', (e) => {
+    let id1 = document.getElementById('sel-id').value;
+    // console.log(id1);
+
+    deleteContact(id1);
+    
+    
+    
 });
 }
     displayincontact1(contact);
@@ -49,7 +58,15 @@ document.getElementById('sel-contact').style.display='none';
     function displayform(){
         document.getElementById('sel-contact').style.display = 'none';
         var form = document.getElementById('addContact');
+        var form1 = document.getElementById('addContact2');
+    form1.style.display="none";
        
+document.getElementById('namee').value='';
+document.getElementById('mobile').value='';
+document.getElementById('landline').value='';
+document.getElementById('website').value='';
+document.getElementById('address').value='';
+document.getElementById('email').value='';
 
         form.style.display="block";
         
@@ -67,16 +84,66 @@ function addItem(e)
     var landline = document.getElementById('landline').value;
     var website = document.getElementById('website').value;
     var address = document.getElementById('address').value;
+
+
+    
+    if(!validation(name,email,mobile,landline,website,address))
+    {
+       document.getElementById('namee').value='';
+       document.getElementById('email').value='';
+       document.getElementById('mobile').value='';
+       document.getElementById('landline').value='';
+       document.getElementById('website').value='';
+       document.getElementById('address').value='';
+
+    }
+    else{
+
     var contact = new Contact(name,email,mobile,landline,website,address);
 
     Contacts.push(contact);
     
     
     displayincontact2(contact);
+    }
 
 }
 }
+function validation(name,email,mobile,landline,website,address)
+{
+    var t = true;
+    if(name=='' || name==null)
+    {
+        alert('Name cant be blank');
+        t=false;
+    }
+    var validRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
+    if (email.match(validRegex)) {
+  console.log('Hi');
+    }
+    else{
+        alert('Email is not valid');
+        t=false;
+    }
+
+    var phoneno = /^\d{10}$/;
+    if(mobile.match(phoneno))
+    {
+        console.log('a');
+       
+    }
+    else{
+        alert('Mobile is not valid');
+        t=false;
+    }
+    if(address=='' || address==null)
+    {
+        alert('Address cant be blank');
+        t=false;
+    }
+   return t;
+}
 
 
 
@@ -148,19 +215,22 @@ function displayincontact2(params)
 
 function deleteContact(id){
 
-      console.log(id);
+        console.log(id);
         document.getElementById('sel-contact').style.display='none';
+        let contactss2 = document.getElementById(id);
     
-        Contacts = Contacts.filter((contact) => {
-            return contact.id != id;
+        Contacts = Contacts.filter((contactss2) => {
+            return contactss2.id != id;
         });
         
-        let contact = document.getElementById(id);
-        // console.log(contact);
-        if(contact!=null){        let parent = contact.parentElement;
-            // console.log(parent);
-        parent.removeChild(contact);
-        }
+      
+        
+              
+            parent = document.getElementById('cdisplay')
+            con = document.getElementById('cdisplay').children;
+            console.log(con[id]);
+        
+            con[id].style.display='none';
     
 
 }
@@ -168,6 +238,8 @@ function displayselContact(params)
 {
     var form = document.getElementById('addContact');
     form.style.display="none";
+    var form1 = document.getElementById('addContact2');
+    form1.style.display="none";
    document.getElementById('sel-contact').style.display = 'block';
    document.getElementById('sel-name').innerHTML = params.namee;
    document.getElementById('sel-email1').innerHTML = params.email;
@@ -179,15 +251,7 @@ function displayselContact(params)
    const id = document.getElementById('sel-id');
    id.value = params.id;
 //    console.log(id);
-    document.getElementById('sel-delete').addEventListener('click', (e) => {
-    let id1 = document.getElementById('sel-id').value;
-    // console.log(id1);
-
-    deleteContact(id1);
-    
-    
-    
-});
+   
     
    
 
@@ -198,6 +262,8 @@ function displayselContact1(params)
 
     var form = document.getElementById('addContact');
     form.style.display="none";
+    var form1 = document.getElementById('addContact2');
+    form1.style.display="none";
    document.getElementById('sel-contact').style.display = 'block';
    document.getElementById('sel-name').innerHTML = params.namee;
    document.getElementById('sel-email1').innerHTML = params.email;
@@ -211,7 +277,7 @@ function displayselContact1(params)
 //    console.log(id)
    document.getElementById('sel-delete').addEventListener('click', (e) => {
     let id1 = document.getElementById('sel-id').value;
-    // console.log(id1);
+    console.log(id1);
     deleteContact(id1);
     
 });
@@ -227,6 +293,7 @@ function editcontact(id) {
 
     
     // console.log('a');
+    
     document.getElementById('update2').style.display='block';
     let  Name = document.getElementById('namee2');
     let Email = document.getElementById('email2');
@@ -236,13 +303,9 @@ function editcontact(id) {
     let Address = document.getElementById('address2');
     let Id = document.getElementById('addContact2');
     let SubmitBtn = document.getElementById('update2');
-    
 
-//  Name.onkeypress = (e) => e.key != "Enter";
-//  Email.onkeypress = (e) => e.key != "Enter";
-//  Mobile.onkeypress = (e) => e.key != "Enter";
-//  Landline.onkeypress = (e) => e.key != "Enter";
-//  Website.onkeypress = (e) => e.key != "Enter";
+
+    
 
 
     let nameVal = '';
@@ -302,6 +365,16 @@ function x(id){
         var landline = document.getElementById('landline2').value;
         var website = document.getElementById('website2').value;
         var address = document.getElementById('address2').value;
+        if(!validation(name,email,mobile,landline,website,address))
+        {
+            document.getElementById('namee2').value='';
+           document.getElementById('email2').value='';
+           document.getElementById('mobile2').value='';
+           document.getElementById('landline2').value='';
+           document.getElementById('website2').value='';
+           document.getElementById('address2').value='';
+        }
+        else{
         console.log(name);
         console.log(id);
         for(var j=0;j<Contacts.length;j++)
@@ -341,14 +414,9 @@ function x(id){
    child[2].innerHTML = mobile;
     }
 }
+}
 
 
-document.getElementById('namee').value='';
-document.getElementById('mobile').value='';
-document.getElementById('landline').value='';
-document.getElementById('website').value='';
-document.getElementById('address').value='';
-document.getElementById('email').value='';
 //   
 //    
    return;
