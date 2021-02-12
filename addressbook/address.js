@@ -24,7 +24,13 @@ var Contacts = new Array(
 
 window.onload = function(){
     var add = document.getElementById('addContact');
-    
+    var home = document.getElementById('home');
+    home.addEventListener('click', e=>{
+        document.getElementById('addContact').style.display='none';
+        document.getElementById('addContact2').style.display='none';
+        document.getElementById('sel-contact').style.display='none';
+
+    })
     var x = document.getElementById('sel-edit');
     x.addEventListener('click',edit);
     var display = document.getElementById('display');
@@ -87,14 +93,10 @@ function addItem(e)
 
 
     
-    if(!validation(name,email,mobile,landline,website,address))
+    if(!validation(name,email,mobile,landline,website,address,1))
     {
-       document.getElementById('namee').value='';
-       document.getElementById('email').value='';
-       document.getElementById('mobile').value='';
-       document.getElementById('landline').value='';
-       document.getElementById('website').value='';
-       document.getElementById('address').value='';
+       console.log('a');
+
 
     }
     else{
@@ -103,46 +105,171 @@ function addItem(e)
 
     Contacts.push(contact);
     
+    document.getElementById('addContact').style.display='none';
     
     displayincontact2(contact);
     }
 
 }
 }
-function validation(name,email,mobile,landline,website,address)
+function validation(name,email,mobile,landline,website,address,x)
 {
     var t = true;
+    if(x==1){
+        var t = true;
+    document.getElementById('name_error').innerHTML='';
     if(name=='' || name==null)
     {
-        alert('Name cant be blank');
+        document.getElementById('name_error').innerHTML='Name cannot be left as blank';
         t=false;
     }
     var validRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-
+    document.getElementById('email_error').innerHTML='';
     if (email.match(validRegex)) {
   console.log('Hi');
     }
+    else if(email=='' || email==null){
+        document.getElementById('email_error').innerHTML='Email cannot be left as blank';
+        t=false;
+    }
     else{
-        alert('Email is not valid');
+        document.getElementById('email_error').innerHTML='Please enter valid email';
         t=false;
     }
 
     var phoneno = /^\d{10}$/;
+    document.getElementById('mobile_error').innerHTML='';
     if(mobile.match(phoneno))
     {
         console.log('a');
        
     }
-    else{
-        alert('Mobile is not valid');
+    else if(mobile=='' || mobile==null){
+        document.getElementById('mobile_error').innerHTML='Mobile number cannot be left as blank';
         t=false;
     }
+    else{
+        document.getElementById('mobile_error').innerHTML='Please enter valid mobile number';
+        t=false;
+    }
+    var landl = /^\d{10}$/;
+    document.getElementById('landline_error').innerHTML='';
+    if(landline.match(landl))
+    {
+        console.log('a');
+       
+    }
+    else if(landline=='' || landline==null){
+        document.getElementById('landline_error').innerHTML='Landline cannot be left as blank';
+        t=false;
+    }
+    else{
+        document.getElementById('landline_error').innerHTML='Please enter valid Landline number';
+        t=false;
+    }
+
+    var web = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g;
+    if(website.match(web))
+    {
+        console.log();
+    }
+    else if(website=='' || website==null)
+    {
+        document.getElementById('website_error').innerHTML='Website cannot be left as blank';
+        t=false;
+    }
+    else
+    {
+        document.getElementById('website_error').innerHTML='Please enter valid website url';
+        t=false;
+    }
+    document.getElementById('address_error').innerHTML='';
     if(address=='' || address==null)
     {
-        alert('Address cant be blank');
+        document.getElementById('address_error').innerHTML='Address cannot be left as blank';
         t=false;
     }
    return t;
+}
+else {
+    
+    
+    
+        
+    document.getElementById('name_error2').innerHTML='';
+    if(name=='' || name==null)
+    {
+        document.getElementById('name_error2').innerHTML='Name cannot be left as blank';
+        t=false;
+    }
+    var validRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    document.getElementById('email_error2').innerHTML='';
+    if (email.match(validRegex)) {
+  console.log('Hi');
+    }
+    else if(email=='' || email==null){
+        document.getElementById('email_error2').innerHTML='Email cannot be left as blank';
+        t=false;
+    }
+    else{
+        document.getElementById('email_error2').innerHTML='Please enter valid email';
+        t=false;
+    }
+
+    var phoneno = /^\d{10}$/;
+    document.getElementById('mobile_error2').innerHTML='';
+    if(mobile.match(phoneno))
+    {
+        console.log('a');
+       
+    }
+    else if(mobile=='' || mobile==null){
+        document.getElementById('mobile_error2').innerHTML='Mobile number cannot be left as blank';
+        t=false;
+    }
+    else{
+        document.getElementById('mobile_error2').innerHTML='Please enter valid mobile number';
+        t=false;
+    }
+    var landl = /^\d{10}$/;
+    document.getElementById('landline_error2').innerHTML='';
+    if(landline.match(landl))
+    {
+        console.log('a');
+       
+    }
+    else if(landline=='' || landline==null){
+        document.getElementById('landline_error2').innerHTML='Landline cannot be left as blank';
+        t=false;
+    }
+    else{
+        document.getElementById('landline_error2').innerHTML='Please enter valid Landline number';
+        t=false;
+    }
+    
+    var web = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g;
+    if(website.match(web))
+    {
+        console.log();
+    }
+    else if(website=='' || website==null)
+    {
+        document.getElementById('website_error2').innerHTML='Website cannot be left as blank';
+        t=false;
+    }
+    else
+    {
+        document.getElementById('website_error2').innerHTML='Please enter valid website url';
+        t=false;
+    }
+    document.getElementById('address_error2').innerHTML='';
+    if(address=='' || address==null)
+    {
+        document.getElementById('address_error2').innerHTML='Address cannot be left as blank';
+        t=false;
+    }
+    return t;
+}
 }
 
 
@@ -349,6 +476,7 @@ function editcontact(id) {
     
 
         document.getElementById("update2").onclick = function() {x(id)};
+        
 
     // SubmitBtn.addEventListener('click', x(id,name,email,mobile,landline,website,address));
 }
@@ -357,7 +485,7 @@ function editcontact(id) {
     
 function x(id){
 
-    document.getElementById('addContact2').style.display = "none";
+    document.getElementById('addContact2').style.display = "block";
 
     var name = document.getElementById('namee2').value;
         var email = document.getElementById('email2').value;
@@ -365,16 +493,14 @@ function x(id){
         var landline = document.getElementById('landline2').value;
         var website = document.getElementById('website2').value;
         var address = document.getElementById('address2').value;
-        if(!validation(name,email,mobile,landline,website,address))
+        if(!validation(name,email,mobile,landline,website,address,2))
         {
-            document.getElementById('namee2').value='';
-           document.getElementById('email2').value='';
-           document.getElementById('mobile2').value='';
-           document.getElementById('landline2').value='';
-           document.getElementById('website2').value='';
-           document.getElementById('address2').value='';
+            
+            console.log("No");
+
         }
         else{
+            document.getElementById('addContact2').style.display = "none";
         console.log(name);
         console.log(id);
         for(var j=0;j<Contacts.length;j++)
@@ -414,6 +540,7 @@ function x(id){
    child[2].innerHTML = mobile;
     }
 }
+// document.getElementById('addContact2').style.display = "none";
 }
 
 
