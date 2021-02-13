@@ -150,9 +150,9 @@ input[type=number] {
 
 .mobile > input{
     
-    width: 80%;
+    width: 60%;
     height: 30px;
-    margin:6px 220px 0px 0px;
+    margin:6px 110px 0px 0px;
 
 }
 .landline > input{
@@ -167,7 +167,7 @@ input[type=number] {
 .website > input{
     width: 80%;;
     height: 30px;
-    margin:6px 0px 0px 0px;
+    margin:6px 0px 10px 0px;
 
 }
 
@@ -207,6 +207,9 @@ input[type=number] {
     height: 100px;
     margin:6px 0px 0px 0px;
 
+}
+.address > label > b{
+    margin-top:10px;
 }
 #mobile_error{
     margin:5px 0px 0px 0px; color: red;
