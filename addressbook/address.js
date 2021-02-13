@@ -62,10 +62,13 @@ document.getElementById('sel-delete').addEventListener('click', (e) => {
     
    
     function displayform(){
+        document.getElementById('update2').style.display='none';
+    document.getElementById('Add').style.display='block';
+
         document.getElementById('sel-contact').style.display = 'none';
         var form = document.getElementById('addContact');
-        var form1 = document.getElementById('addContact2');
-    form1.style.display="none";
+    //     var form1 = document.getElementById('addContact2');
+    // form1.style.display="none";
        
 document.getElementById('namee').value='';
 document.getElementById('mobile').value='';
@@ -191,85 +194,85 @@ function validation(name,email,mobile,landline,website,address,x)
     }
    return t;
 }
-else {
+// else {
     
     
     
         
-    document.getElementById('name_error2').innerHTML='';
-    if(name=='' || name==null)
-    {
-        document.getElementById('name_error2').innerHTML='Name cannot be left as blank';
-        t=false;
-    }
-    var validRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    document.getElementById('email_error2').innerHTML='';
-    if (email.match(validRegex)) {
-  console.log('Hi');
-    }
-    else if(email=='' || email==null){
-        document.getElementById('email_error2').innerHTML='Email cannot be left as blank';
-        t=false;
-    }
-    else{
-        document.getElementById('email_error2').innerHTML='Please enter valid email';
-        t=false;
-    }
+//     document.getElementById('name_error2').innerHTML='';
+//     if(name=='' || name==null)
+//     {
+//         document.getElementById('name_error2').innerHTML='Name cannot be left as blank';
+//         t=false;
+//     }
+//     var validRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+//     document.getElementById('email_error2').innerHTML='';
+//     if (email.match(validRegex)) {
+//   console.log('Hi');
+//     }
+//     else if(email=='' || email==null){
+//         document.getElementById('email_error2').innerHTML='Email cannot be left as blank';
+//         t=false;
+//     }
+//     else{
+//         document.getElementById('email_error2').innerHTML='Please enter valid email';
+//         t=false;
+//     }
 
-    var phoneno = /^\d{10}$/;
-    document.getElementById('mobile_error2').innerHTML='';
-    if(mobile.match(phoneno))
-    {
-        console.log('a');
+//     var phoneno = /^\d{10}$/;
+//     document.getElementById('mobile_error2').innerHTML='';
+//     if(mobile.match(phoneno))
+//     {
+//         console.log('a');
        
-    }
-    else if(mobile=='' || mobile==null){
-        document.getElementById('mobile_error2').innerHTML='Mobile number cannot be left as blank';
-        t=false;
-    }
-    else{
-        document.getElementById('mobile_error2').innerHTML='Please enter valid mobile number';
-        t=false;
-    }
-    var landl = /^\d{10}$/;
-    document.getElementById('landline_error2').innerHTML='';
-    if(landline.match(landl))
-    {
-        console.log('a');
+//     }
+//     else if(mobile=='' || mobile==null){
+//         document.getElementById('mobile_error2').innerHTML='Mobile number cannot be left as blank';
+//         t=false;
+//     }
+//     else{
+//         document.getElementById('mobile_error2').innerHTML='Please enter valid mobile number';
+//         t=false;
+//     }
+//     var landl = /^\d{10}$/;
+//     document.getElementById('landline_error2').innerHTML='';
+//     if(landline.match(landl))
+//     {
+//         console.log('a');
        
-    }
-    else if(landline=='' || landline==null){
-        document.getElementById('landline_error2').innerHTML='Landline cannot be left as blank';
-        t=false;
-    }
-    else{
-        document.getElementById('landline_error2').innerHTML='Please enter valid Landline number';
-        t=false;
-    }
+//     }
+//     else if(landline=='' || landline==null){
+//         document.getElementById('landline_error2').innerHTML='Landline cannot be left as blank';
+//         t=false;
+//     }
+//     else{
+//         document.getElementById('landline_error2').innerHTML='Please enter valid Landline number';
+//         t=false;
+//     }
     
-    var web = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g;
-    if(website.match(web))
-    {
-        console.log();
-    }
-    else if(website=='' || website==null)
-    {
-        document.getElementById('website_error2').innerHTML='Website cannot be left as blank';
-        t=false;
-    }
-    else
-    {
-        document.getElementById('website_error2').innerHTML='Please enter valid website url';
-        t=false;
-    }
-    document.getElementById('address_error2').innerHTML='';
-    if(address=='' || address==null)
-    {
-        document.getElementById('address_error2').innerHTML='Address cannot be left as blank';
-        t=false;
-    }
-    return t;
-}
+//     var web = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g;
+//     if(website.match(web))
+//     {
+//         console.log();
+//     }
+//     else if(website=='' || website==null)
+//     {
+//         document.getElementById('website_error2').innerHTML='Website cannot be left as blank';
+//         t=false;
+//     }
+//     else
+//     {
+//         document.getElementById('website_error2').innerHTML='Please enter valid website url';
+//         t=false;
+//     }
+//     document.getElementById('address_error2').innerHTML='';
+//     if(address=='' || address==null)
+//     {
+//         document.getElementById('address_error2').innerHTML='Address cannot be left as blank';
+//         t=false;
+//     }
+//     return t;
+// }
 }
 
 
@@ -365,8 +368,9 @@ function displayselContact(params)
 {
     var form = document.getElementById('addContact');
     form.style.display="none";
-    var form1 = document.getElementById('addContact2');
-    form1.style.display="none";
+    
+    // var form1 = document.getElementById('addContact2');
+    // form1.style.display="none";
    document.getElementById('sel-contact').style.display = 'block';
    document.getElementById('sel-name').innerHTML = params.namee;
    document.getElementById('sel-email1').innerHTML = params.email;
@@ -389,8 +393,8 @@ function displayselContact1(params)
 
     var form = document.getElementById('addContact');
     form.style.display="none";
-    var form1 = document.getElementById('addContact2');
-    form1.style.display="none";
+    // var form1 = document.getElementById('addContact2');
+    // form1.style.display="none";
    document.getElementById('sel-contact').style.display = 'block';
    document.getElementById('sel-name').innerHTML = params.namee;
    document.getElementById('sel-email1').innerHTML = params.email;
@@ -422,14 +426,21 @@ function editcontact(id) {
     // console.log('a');
     
     document.getElementById('update2').style.display='block';
-    let  Name = document.getElementById('namee2');
-    let Email = document.getElementById('email2');
-    let Mobile = document.getElementById('mobile2');
-    let Landline = document.getElementById('landline2');
-    let Website = document.getElementById('website2');
-    let Address = document.getElementById('address2');
-    let Id = document.getElementById('addContact2');
+    document.getElementById('Add').style.display='none';
+    let  Name = document.getElementById('namee');
+    let Email = document.getElementById('email');
+    let Mobile = document.getElementById('mobile');
+    let Landline = document.getElementById('landline');
+    let Website = document.getElementById('website');
+    let Address = document.getElementById('address');
+    let Id = document.getElementById('addContact');
     let SubmitBtn = document.getElementById('update2');
+    document.getElementById('name_error').innerHTML='';
+    document.getElementById('email_error').innerHTML='';
+    document.getElementById('mobile_error').innerHTML='';
+    document.getElementById('landline_error').innerHTML='';
+    document.getElementById('website_error').innerHTML='';
+    document.getElementById('address_error').innerHTML='';
 
 
     
@@ -485,22 +496,22 @@ function editcontact(id) {
     
 function x(id){
 
-    document.getElementById('addContact2').style.display = "block";
+    document.getElementById('addContact').style.display = "block";
 
-    var name = document.getElementById('namee2').value;
-        var email = document.getElementById('email2').value;
-        var mobile = document.getElementById('mobile2').value;
-        var landline = document.getElementById('landline2').value;
-        var website = document.getElementById('website2').value;
-        var address = document.getElementById('address2').value;
-        if(!validation(name,email,mobile,landline,website,address,2))
+    var name = document.getElementById('namee').value;
+        var email = document.getElementById('email').value;
+        var mobile = document.getElementById('mobile').value;
+        var landline = document.getElementById('landline').value;
+        var website = document.getElementById('website').value;
+        var address = document.getElementById('address').value;
+        if(!validation(name,email,mobile,landline,website,address,1))
         {
             
             console.log("No");
 
         }
         else{
-            document.getElementById('addContact2').style.display = "none";
+            document.getElementById('addContact').style.display = "none";
         console.log(name);
         console.log(id);
         for(var j=0;j<Contacts.length;j++)
@@ -566,7 +577,7 @@ function edit()
     let id1 = document.getElementById('sel-id').value;
     
     document.getElementById('sel-contact').style.display = "none";
-    document.getElementById('addContact2').style.display = "block";
+    document.getElementById('addContact').style.display = "block";
     // console.log(id1);
     var x = editcontact(id1);
    
